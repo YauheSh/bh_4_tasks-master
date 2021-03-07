@@ -16,12 +16,20 @@ odd_in_list([2, -1, 4, True, None, 6]) -> [2, 4, 6]
 """
 
 
+
 def odd_in_list(some_list: list) -> list:
     odd_list = []
-    # TODO тут написать цикл for
+    for value in some_list:
+        if isinstance(value, int) and not isinstance(value, bool):
+            if value % 2 == 0:
+                odd_list.append(value)
+        else:
+            continue
     return odd_list
 
 
 if __name__ == '__main__':
     assert odd_in_list([1, False, 2, -1, 'Hi', 4, 6, [], (), -8]) == [2, 4, 6, -8]
     print('Решено!')
+
+

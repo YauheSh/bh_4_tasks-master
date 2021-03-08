@@ -33,10 +33,49 @@ is_year_leap(2400) -> True
 
 
 def is_year_leap(year: int) -> bool:
-    result = None
+
+    if year > 0:
+        if year % 4 != 0:
+            result = False
+        elif year % 4 == 0 and year % 100 != 0:
+            result = True
+        elif year % 4 == 0:
+            if year % 100 == 0:
+                if year % 400 == 0:
+                    result = True
+                else:
+                    result = False
+            else:
+                result = False
+        else:
+            result = False
+    else:
+        raise ValueError(f'Вы ввели отрицательное или нулевое значение')
+
     return result
+
+'''
+    if year % 4 == 0:
+        if year % 100 != 0:
+            result = True
+        elif year % 400 == 0:
+            result = True
+        else:
+            result = False
+    else:
+        result = False
+'''
+
+
 
 
 if __name__ == '__main__':
-    year_val = int(input('Введите год: '))
-    print(f'Тип года: {is_year_leap(year_val)}')
+    try:
+        year_val = int(input('Введите год: '))
+        print(f'Тип года: {is_year_leap(year_val)}')
+    except ValueError as exc:
+        print(f'{exc}')
+
+
+
+

@@ -7,7 +7,19 @@
 
 
 def not_3(array: list) -> list:
+
+    for index, value in enumerate(array):
+        if value % 3 == 0:
+            array.pop(index)
+        else:
+            continue
     return array
+    #for value in array:
+    #    if value % 3 == 0:
+    #        array.remove(value)
+    #    else:
+    #        continue
+    #return array
 
 
 if __name__ == '__main__':

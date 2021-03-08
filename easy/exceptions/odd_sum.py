@@ -27,13 +27,10 @@ def odd_sum(int_list: list) -> int:
 
 
 if __name__ == '__main__':
-
-
-
     try:
         #print("Создаем список для обработки. Для выхода введите \'exit\'")
         #while True:
-        #    element_list = input("Добавить элемент списка:")
+        #    element_list = input("Добавить элемент списка:") ?? можно ли сюда поставить any(input)) ??
         #    if element_list == "exit":
         #        break
         #    odd_sum(list_of_element, element_list)
